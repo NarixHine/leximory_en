@@ -5,9 +5,10 @@ import Commented from '@/components/markdown'
 import H from '@/components/title'
 
 export default async function Report({ day }: {
-    day: '1 day ago' | '4 days ago' | '7 days ago'
+    day: '1 day ago' | '4 days ago' | '7 days ago' | 'Today'
 }) {
     const range = {
+        'Today': [-1, 0],
         '1 day ago': [1, 0],
         '4 days ago': [4, 3],
         '7 days ago': [7, 6],

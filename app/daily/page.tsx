@@ -18,7 +18,7 @@ export default async function Daily() {
     const hasSubscribed = Boolean(await prisma.subs.findFirst({
         where: {
             uid: auth().userId
-        }
+        },
     }))
 
     return (
@@ -26,6 +26,9 @@ export default async function Daily() {
             <H>Daily review</H>
             <Spacer y={2}></Spacer>
             <Bell hasSubscribed={hasSubscribed}></Bell>
+            <Suspense fallback={<Loading></Loading>}>
+                <Report day='Today'></Report>
+            </Suspense>
             <Suspense fallback={<Loading></Loading>}>
                 <Report day='1 day ago'></Report>
             </Suspense>
