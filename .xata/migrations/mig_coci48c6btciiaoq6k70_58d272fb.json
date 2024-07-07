@@ -1,0 +1,19 @@
+{
+  "id": "mig_coci48c6btciiaoq6k70",
+  "parentID": "mig_coci449i8ag8nohmeb30",
+  "checksum": "1:58d272fb6dbe2ee00ac211fc2b0c6d34b7e0a43fb5bc0a277141d0cc950c18f4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "library",
+          "type": "link",
+          "link": {
+            "table": "libraries"
+          }
+        },
+        "table": "texts"
+      }
+    }
+  ]
+}

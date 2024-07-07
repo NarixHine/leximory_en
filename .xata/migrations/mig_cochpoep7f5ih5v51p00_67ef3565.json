@@ -1,0 +1,11 @@
+{
+  "id": "mig_cochpoep7f5ih5v51p00",
+  "checksum": "1:67ef356550f4a5c8caa687f07de557c54832d179f4d663aeb9921ea1d619901e",
+  "operations": [
+    {
+      "addTable": {
+        "table": "libraries"
+      }
+    }
+  ]
+}

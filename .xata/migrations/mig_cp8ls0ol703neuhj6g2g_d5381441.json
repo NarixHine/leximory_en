@@ -1,0 +1,14 @@
+{
+  "id": "mig_cp8ls0ol703neuhj6g2g",
+  "parentID": "mig_cp8lrdjrgin2nopfial0",
+  "checksum": "1:d5381441ce79ff95231079231d9a661f1d6f695e2019fb39149331b3db597f2c",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "applicant",
+        "oldName": "user",
+        "table": "applications"
+      }
+    }
+  ]
+}

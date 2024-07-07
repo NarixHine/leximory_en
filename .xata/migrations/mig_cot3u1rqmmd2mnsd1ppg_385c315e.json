@@ -1,0 +1,12 @@
+{
+  "id": "mig_cot3u1rqmmd2mnsd1ppg",
+  "parentID": "mig_cot3ptsi8sbc1v0pc810",
+  "checksum": "1:385c315e9e5a03e9530fa336fc1852c29f8bc268bf32e5ce92f949d50952ac62",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "dict"
+      }
+    }
+  ]
+}

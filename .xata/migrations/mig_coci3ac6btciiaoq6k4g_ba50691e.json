@@ -1,0 +1,14 @@
+{
+  "id": "mig_coci3ac6btciiaoq6k4g",
+  "parentID": "mig_coci381i8ag8nohmeaug",
+  "checksum": "1:ba50691ed2b25e56bd9aaa413127c173884a163a5649d6e76b030727b9de15ad",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "language",
+        "oldName": "lang",
+        "table": "libraries"
+      }
+    }
+  ]
+}

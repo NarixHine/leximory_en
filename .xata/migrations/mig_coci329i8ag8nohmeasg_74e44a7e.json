@@ -1,0 +1,19 @@
+{
+  "id": "mig_coci329i8ag8nohmeasg",
+  "parentID": "mig_coci1ms6btciiaoq6k1g",
+  "checksum": "1:74e44a7e800e87c3f66796edae5fdd5a261ba4d6fd45bc2c82448988c83e5999",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "library",
+          "type": "link",
+          "link": {
+            "table": "libraries"
+          }
+        },
+        "table": "lexicon"
+      }
+    }
+  ]
+}

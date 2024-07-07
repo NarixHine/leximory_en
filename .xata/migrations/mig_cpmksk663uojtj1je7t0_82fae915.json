@@ -1,0 +1,19 @@
+{
+  "id": "mig_cpmksk663uojtj1je7t0",
+  "parentID": "mig_cpmksce63uojtj1je7s0",
+  "checksum": "1:82fae915940e5d4e61f4b2d60f1f3e1844f78be42479daac6050935baba38d43",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "lib",
+          "type": "link",
+          "link": {
+            "table": "libraries"
+          }
+        },
+        "table": "audio"
+      }
+    }
+  ]
+}

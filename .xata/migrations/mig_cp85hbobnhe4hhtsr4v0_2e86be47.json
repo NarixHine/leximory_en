@@ -1,0 +1,19 @@
+{
+  "id": "mig_cp85hbobnhe4hhtsr4v0",
+  "parentID": "mig_cp85h5gbnhe4hhtsr4u0",
+  "checksum": "1:2e86be478a1214f44e39b698cfc09651139afca00c2951c8cf28a7d12174b976",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "lib",
+          "type": "link",
+          "link": {
+            "table": "libraries"
+          }
+        },
+        "table": "applications"
+      }
+    }
+  ]
+}

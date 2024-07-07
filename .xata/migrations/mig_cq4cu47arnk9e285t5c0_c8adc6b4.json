@@ -1,0 +1,17 @@
+{
+  "id": "mig_cq4cu47arnk9e285t5c0",
+  "parentID": "mig_cq4ctr7arnk9e285t5b0",
+  "checksum": "1:c8adc6b404d0b12e44ce6a784a27a73cb668525c5e69f90dae1e2b4db951347a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "uid",
+          "type": "string",
+          "unique": true
+        },
+        "table": "subs"
+      }
+    }
+  ]
+}

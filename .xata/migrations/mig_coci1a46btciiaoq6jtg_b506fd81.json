@@ -1,0 +1,16 @@
+{
+  "id": "mig_coci1a46btciiaoq6jtg",
+  "parentID": "mig_coci171i8ag8nohmeang",
+  "checksum": "1:b506fd810b643b63135c6590ef25c43cc87572df9c1d5591560287022b1ceb8a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "word",
+          "type": "string"
+        },
+        "table": "lexicon"
+      }
+    }
+  ]
+}

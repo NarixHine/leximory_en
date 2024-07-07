@@ -1,0 +1,13 @@
+{
+  "id": "mig_coci171i8ag8nohmeang",
+  "parentID": "mig_coci0i46btciiaoq6jrg",
+  "checksum": "1:da9cc7732b43db27bbf845331cf8c3e10662831730b2146b491b91e1af98d87b",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "lexicon",
+        "oldName": "words"
+      }
+    }
+  ]
+}

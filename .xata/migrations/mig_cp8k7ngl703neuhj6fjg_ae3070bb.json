@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp8k7ngl703neuhj6fjg",
+  "parentID": "mig_cp85i8gbnhe4hhtsr520",
+  "checksum": "1:ae3070bb994250913dc3d3e0036a4aaaf0e1213434bf2f4e27d632057cdd177b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "access",
+          "type": "int",
+          "notNull": true,
+          "defaultValue": "0"
+        },
+        "table": "libraries"
+      }
+    }
+  ]
+}

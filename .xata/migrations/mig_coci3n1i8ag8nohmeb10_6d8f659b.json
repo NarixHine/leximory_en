@@ -1,0 +1,18 @@
+{
+  "id": "mig_coci3n1i8ag8nohmeb10",
+  "parentID": "mig_coci3fs6btciiaoq6k60",
+  "checksum": "1:6d8f659b2a4407e8eadc17f9d97269c413f44a28041b011515aa30671cb12eee",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "title",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": ""
+        },
+        "table": "texts"
+      }
+    }
+  ]
+}

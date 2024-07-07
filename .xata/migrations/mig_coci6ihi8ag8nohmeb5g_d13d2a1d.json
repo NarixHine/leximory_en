@@ -1,0 +1,13 @@
+{
+  "id": "mig_coci6ihi8ag8nohmeb5g",
+  "parentID": "mig_coci6h1i8ag8nohmeb4g",
+  "checksum": "1:d13d2a1dbc8e246228006d9897e6023267454947adf7975983de70178bfb2973",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "owner",
+        "table": "libraries"
+      }
+    }
+  ]
+}

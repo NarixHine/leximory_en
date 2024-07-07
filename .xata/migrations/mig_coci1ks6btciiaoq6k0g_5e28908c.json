@@ -1,0 +1,13 @@
+{
+  "id": "mig_coci1ks6btciiaoq6k0g",
+  "parentID": "mig_coci1jpi8ag8nohmeaqg",
+  "checksum": "1:5e28908c273f0ed4447a925e640fa6e3ef966de7ce584c154bf3de5d63b05a9e",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "word",
+        "table": "lexicon"
+      }
+    }
+  ]
+}

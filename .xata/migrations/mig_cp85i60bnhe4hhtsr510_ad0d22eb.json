@@ -1,0 +1,13 @@
+{
+  "id": "mig_cp85i60bnhe4hhtsr510",
+  "parentID": "mig_cp85i3gbnhe4hhtsr500",
+  "checksum": "1:ad0d22ebd310c3706419db556d88f6a2cedf41788073665492acdaeded37b960",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "state",
+        "table": "applications"
+      }
+    }
+  ]
+}

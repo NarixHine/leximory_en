@@ -1,0 +1,16 @@
+{
+  "id": "mig_coqq0dnufjs7i8p7g5d0",
+  "parentID": "mig_cophmfe15cqh5q3m8g9g",
+  "checksum": "1:7c15bccf7f8d09ae43720db1075772accbc0dcb1f1c1c3e60498df522c8d6b1b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "starredBy",
+          "type": "multiple"
+        },
+        "table": "libraries"
+      }
+    }
+  ]
+}

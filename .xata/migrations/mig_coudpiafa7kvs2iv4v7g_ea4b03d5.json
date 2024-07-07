@@ -1,0 +1,16 @@
+{
+  "id": "mig_coudpiafa7kvs2iv4v7g",
+  "parentID": "mig_cot3u1rqmmd2mnsd1ppg",
+  "checksum": "1:ea4b03d501cfccbf0e4092ec0630454f04316e1bf04973cf4ffff7b33dbb32d2",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "topics",
+          "type": "multiple"
+        },
+        "table": "texts"
+      }
+    }
+  ]
+}

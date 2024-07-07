@@ -1,0 +1,18 @@
+{
+  "id": "mig_cq4cuanarnk9e285t5d0",
+  "parentID": "mig_cq4cu47arnk9e285t5c0",
+  "checksum": "1:a96bf65b4a9f215da76eb05c7f720e57745d7633fa66a3d60155996daa48413d",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "subscription",
+          "type": "json",
+          "notNull": true,
+          "defaultValue": "{}"
+        },
+        "table": "subs"
+      }
+    }
+  ]
+}

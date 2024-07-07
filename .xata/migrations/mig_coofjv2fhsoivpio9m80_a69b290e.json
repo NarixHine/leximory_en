@@ -1,0 +1,18 @@
+{
+  "id": "mig_coofjv2fhsoivpio9m80",
+  "parentID": "mig_cooef5776ivhs9c6s0rg",
+  "checksum": "1:a69b290e5d97a9f280e323eb656f9fd78e2542153c62207f1f5278d18581a6d2",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "update",
+          "type": "datetime",
+          "notNull": true,
+          "defaultValue": "now"
+        },
+        "table": "lexicon"
+      }
+    }
+  ]
+}

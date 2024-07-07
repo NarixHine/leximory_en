@@ -1,0 +1,129 @@
+{
+  "id": "mig_cot3ptsi8sbc1v0pc810",
+  "parentID": "mig_coqq0dnufjs7i8p7g5d0",
+  "checksum": "1:b754f04afc2a60653ad6e3fe1e23e2eafed54b58ed9f0e6299b0e2bc95a88022",
+  "operations": [
+    {
+      "addTable": {
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "word",
+          "type": "string"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "phonetic",
+          "type": "string"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "definition",
+          "type": "text"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "translation",
+          "type": "text"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "pos",
+          "type": "string"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "collins",
+          "type": "int"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "oxford",
+          "type": "int"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "tag",
+          "type": "string"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "bnc",
+          "type": "int"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "frq",
+          "type": "int"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "exchange",
+          "type": "string"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "detail",
+          "type": "string"
+        },
+        "table": "dict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "audio",
+          "type": "string"
+        },
+        "table": "dict"
+      }
+    }
+  ]
+}

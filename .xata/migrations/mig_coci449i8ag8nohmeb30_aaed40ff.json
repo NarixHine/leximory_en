@@ -1,0 +1,13 @@
+{
+  "id": "mig_coci449i8ag8nohmeb30",
+  "parentID": "mig_coci3r9i8ag8nohmeb20",
+  "checksum": "1:aaed40ff5d3eaae1a6fc578847f6de0ac1c62e48bb1f0e68606e8ba747fbb2a2",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "title",
+        "table": "texts"
+      }
+    }
+  ]
+}

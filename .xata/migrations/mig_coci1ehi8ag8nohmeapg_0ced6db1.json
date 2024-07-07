@@ -1,0 +1,14 @@
+{
+  "id": "mig_coci1ehi8ag8nohmeapg",
+  "parentID": "mig_coci1c1i8ag8nohmeaog",
+  "checksum": "1:0ced6db183796f0c84c9eaacf37a40557b6604f82f77dadcf062a8a49bd54194",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "definition",
+        "oldName": "def",
+        "table": "lexicon"
+      }
+    }
+  ]
+}

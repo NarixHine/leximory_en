@@ -1,0 +1,13 @@
+{
+  "id": "mig_couuj1mqbfdoutkm39e0",
+  "parentID": "mig_couuiv6qbfdoutkm39d0",
+  "checksum": "1:c428a044709498112b4afbefdbe9029f397f646a2b6e23b53b13a8d54a9be3e2",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "bnc",
+        "table": "ecdict"
+      }
+    }
+  ]
+}
