@@ -5,17 +5,21 @@ import Report from './report'
 import Bell from './bell'
 import { Spacer } from '@nextui-org/spacer'
 import { auth } from '@clerk/nextjs/server'
-import { getXataClient } from '@/lib/xata'
 import { Metadata } from 'next'
 import { Skeleton } from '@nextui-org/skeleton'
+import { PrismaClient } from '@prisma/client'
 
 export const metadata: Metadata = {
     title: '日报',
 }
 
 export default async function Daily() {
-    const xata = getXataClient()
-    const hasSubscribed = Boolean(await xata.db.subs.filter({ uid: auth().userId }).getFirst())
+    const prisma = new PrismaClient()
+    const hasSubscribed = Boolean(await prisma.subs.findFirst({
+        where: {
+            uid: auth().userId
+        }
+    }))
 
     return (
         <Main maxWidth={800}>

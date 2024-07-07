@@ -1,7 +1,7 @@
 import { GetEvents } from 'inngest'
 import { inngest } from './client'
-import { getXataClient } from '@/lib/xata'
-import webpush, { PushSubscription } from 'web-push'
+import webpush from 'web-push'
+import { PrismaClient } from '@prisma/client'
 
 type Events = GetEvents<typeof inngest>
 
@@ -11,13 +11,14 @@ webpush.setVapidDetails(
     process.env.VAPID_PRIVATE_KEY!
 )
 
+const prisma = new PrismaClient()
+
 export const fanNotification = inngest.createFunction(
     { id: 'load-subscribed-users' },
     { cron: 'TZ=Asia/Shanghai 0 22 * * *' },
     async ({ step }) => {
         const users = await step.run('fetch-users', async () => {
-            const xata = getXataClient()
-            return xata.db.subs.select(['uid', 'subscription']).getAll()
+            return prisma.subs.findMany()
         })
 
         const events = users.map<Events['app/notify']>(
@@ -25,7 +26,7 @@ export const fanNotification = inngest.createFunction(
                 return {
                     name: 'app/notify',
                     data: {
-                        subscription: user.subscription as PushSubscription,
+                        subscription: user.subscription as string,
                     },
                     user,
                 }
@@ -41,7 +42,7 @@ export const notify = inngest.createFunction(
     { event: 'app/notify' },
     async ({ event, step }) => {
         const { subscription } = event.data
-        webpush.sendNotification(subscription, JSON.stringify({
+        webpush.sendNotification(JSON.parse(subscription), JSON.stringify({
             title: 'Leximory 日报',
             body: '回顾昨日、四日前、七日前记忆的语汇。',
             icon: '/android-chrome-192x192.png',

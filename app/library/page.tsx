@@ -141,13 +141,7 @@ export default async function Page() {
                 key={lib!.name}
                 name={lib!.name}
                 lang={lib!.language}
-                collab={lib!.collaborators ?? []}
-                viewers={lib!.viewers ?? []}
-                topics={
-                    ([] as string[])
-                        .concat((lib?.collaborators ?? []).concat(lib?.viewers ?? []).length > 0 || lib?.access === libAccessStatusMap.public || lib?.access === libAccessStatusMap.review ? ['共享'] : [])
-                        .concat(lib?.owner === userId || (lib?.collaborators ?? []).includes('*') || (lib?.collaborators ?? []).includes(userId as string) || (Boolean(orgId) && orgId === lib?.org && orgRole === 'org:admin') ? [] : ['只读'])
-                }
+                topics={[]}
                 lexicon={{ count }}
                 isOwner={lib!.owner === userId}
                 orgs={mems.map((mem) => ({

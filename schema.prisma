@@ -1,5 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model audio {
+  xata_id        String     @unique(map: "_pgroll_new_audio_xata_id_key") @default(dbgenerated("('rec_'::text || (xata_private.xid())::text)"))
+  xata_version   Int        @default(0)
+  xata_createdat DateTime   @default(now()) @db.Timestamptz(6)
+  xata_updatedat DateTime   @default(now()) @db.Timestamptz(6)
+  lib            String?
+  gen            Json?
+  libraries      libraries? @relation(fields: [lib], references: [xata_id], onUpdate: NoAction, map: "lib_link")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model ecdict {
+  word           String?
+  phonetic       String?
+  definition     String?
+  translation    String?
+  pos            String?
+  tag            String?
+  frq            BigInt?
+  xata_version   Int      @default(0)
+  xata_createdat DateTime @default(now()) @db.Timestamptz(6)
+  xata_updatedat DateTime @default(now()) @db.Timestamptz(6)
+  xata_id        String   @unique(map: "_pgroll_new_ecdict_xata_id_key") @default(dbgenerated("('rec_'::text || (xata_private.xid())::text)"))
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model lexicon {
+  xata_id        String     @unique(map: "_pgroll_new_lexicon_xata_id_key") @default(dbgenerated("('rec_'::text || (xata_private.xid())::text)"))
+  xata_version   Int        @default(0)
+  xata_createdat DateTime   @default(now()) @db.Timestamptz(6)
+  xata_updatedat DateTime   @default(now()) @db.Timestamptz(6)
+  lib            String?
+  word           String     @default("")
+  libraries      libraries? @relation(fields: [lib], references: [xata_id], onUpdate: NoAction, map: "lib_link")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model libraries {
+  language       String?
+  collaborators  String[]
+  owner          String?
+  viewers        String[]
+  name           String?
+  starredBy      String[]
+  access         BigInt?
+  org            String?
+  xata_createdat DateTime  @default(now()) @db.Timestamptz(6)
+  xata_updatedat DateTime  @default(now()) @db.Timestamptz(6)
+  xata_id        String    @unique(map: "_pgroll_new_libraries_xata_id_key") @default(dbgenerated("('rec_'::text || (xata_private.xid())::text)"))
+  xata_version   Int       @default(0)
+  audio          audio[]
+  lexicon        lexicon[]
+  texts          texts[]
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model subs {
+  uid            String?
+  subscription   String?
+  xata_updatedat DateTime @default(now()) @db.Timestamptz(6)
+  xata_id        String   @unique(map: "_pgroll_new_subs_xata_id_key") @default(dbgenerated("('rec_'::text || (xata_private.xid())::text)"))
+  xata_version   Int      @default(0)
+  xata_createdat DateTime @default(now()) @db.Timestamptz(6)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+/// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+model texts {
+  xata_version   Int        @default(0)
+  xata_createdat DateTime   @default(now()) @db.Timestamptz(6)
+  xata_updatedat DateTime   @default(now()) @db.Timestamptz(6)
+  xata_id        String     @unique(map: "_pgroll_new_texts_xata_id_key") @default(dbgenerated("('rec_'::text || (xata_private.xid())::text)"))
+  content        String     @default("")
+  title          String     @default("New Text")
+  lib            String?
+  topics         String[]
+  libraries      libraries? @relation(fields: [lib], references: [xata_id], onUpdate: NoAction, map: "lib_link")
 }

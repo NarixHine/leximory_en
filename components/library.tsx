@@ -12,7 +12,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { lora, cn } from '@/lib/fonts'
 
-function Library({ id, name, topics, lexicon, lang, save, del, collab, viewers, isOwner, access, orgId, orgs }: {
+function Library({ id, name, topics, lexicon, lang, save, del, isOwner, access, orgId, orgs }: {
     id: string,
     name: string,
     topics: string[],
@@ -23,8 +23,6 @@ function Library({ id, name, topics, lexicon, lang, save, del, collab, viewers, 
     lang: string,
     save: (form: FormData) => void,
     del?: () => Promise<void>,
-    collab: string[],
-    viewers: string[],
     isOwner: boolean,
     orgId: string | null | undefined,
     orgs: { label: string, name: string }[]
@@ -60,18 +58,6 @@ function Library({ id, name, topics, lexicon, lang, save, del, collab, viewers, 
                 name: 'name',
                 label: '文库名',
                 value: name
-            }, {
-                name: 'collaborators',
-                long: true,
-                label: '协作者 ID（空行分隔）',
-                value: collab.join('\n'),
-                isAdvanced: true
-            }, {
-                name: 'viewers',
-                long: true,
-                label: '读者 ID（空行分隔）',
-                value: viewers.join('\n'),
-                isAdvanced: true
             }]}
             selects={[{
                 name: 'access',

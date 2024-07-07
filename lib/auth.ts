@@ -14,8 +14,6 @@ export const authWrite = async (lib: string, ownerOnly?: boolean) => {
             { id: lib },
             !ownerOnly ? {
                 $any: [
-                    { collaborators: { $includes: userId } },
-                    { collaborators: { $includes: '*' } },
                     { owner: userId },
                     // @ts-ignore
                 ].concat(orgCondition)
@@ -35,16 +33,12 @@ export const authRead = async (lib: string) => {
     if (!userId) {
         throw new Error('Read unauthorized')
     }
-    const rec = await xata.db.libraries.select(['owner', 'language', 'name', 'starredBy', 'collaborators', 'org']).filter({
+    const rec = await xata.db.libraries.select(['owner', 'language', 'name', 'starredBy', 'org']).filter({
         $all: [
             { id: lib },
             {
                 $any: [
-                    { collaborators: { $includes: userId } },
-                    { collaborators: { $includes: '*' } },
                     { owner: userId },
-                    { viewers: { $includes: userId } },
-                    { viewers: { $includes: '*' } },
                     { access: libAccessStatusMap.public },
                     { org: orgId }
                 ]
@@ -54,7 +48,7 @@ export const authRead = async (lib: string) => {
     if (!rec) {
         throw new Error('Read unauthorized')
     }
-    const isReadOnly = !rec?.collaborators?.includes(userId as string) && !rec?.collaborators?.includes('*') && rec?.owner !== auth().userId && (orgId !== '' && rec?.org === orgId ? orgRole !== 'org:admin' : true)
+    const isReadOnly = (orgId !== '' && rec?.org === orgId ? orgRole !== 'org:admin' : true)
     const isOwner = rec?.owner === auth().userId
     return { rec, isReadOnly, isOwner }
 }
@@ -68,17 +62,17 @@ export const authAccess = async (lib: string, otherwise?: () => void) => {
     const rec = await xata
         .db
         .libraries
-        .select(['owner', 'language', 'name', 'starredBy', 'collaborators', 'viewers', 'access', 'org'])
+        .select(['owner', 'language', 'name', 'starredBy', 'access', 'org'])
         .filter({ id: lib }).getFirst()
     if (!rec) {
         throw new Error('Library not found')
     }
 
-    const isAccessible = rec?.collaborators?.includes(userId as string) || rec?.collaborators?.includes('*') || rec?.owner === userId || rec?.viewers?.includes(userId as string) || rec?.viewers?.includes('*') || rec?.access === libAccessStatusMap.public || (Boolean(orgId) && rec?.org === orgId)
+    const isAccessible = rec?.access === libAccessStatusMap.public || (Boolean(orgId) && rec?.org === orgId)
     if (!isAccessible && otherwise) {
         otherwise()
     }
-    const isReadOnly = isAccessible && (!rec?.collaborators?.includes(userId as string) && !rec?.collaborators?.includes('*') && rec?.owner !== auth().userId && (orgId !== '' && rec?.org === orgId ? orgRole !== 'org:admin' : true))
+    const isReadOnly = isAccessible && (orgId !== '' && rec?.org === orgId ? orgRole !== 'org:admin' : true)
     const isPrivate = rec?.access === libAccessStatusMap.private
     const isOrgnizational = orgId !== '' && rec?.org === orgId
     return { rec, isAccessible, isReadOnly, isPrivate, isOrgnizational }
@@ -93,16 +87,7 @@ const belongToOwnLibs = () => {
                 $notExists: 'lib.org'
             },
             {
-                $all: [
-                    { 'lib.starredBy': { $includes: userId } },
-                    {
-                        $any: [
-                            { 'lib.collaborators': { $includes: userId } },
-                            { 'lib.collaborators': { $includes: '*' } },
-                            { 'lib.viewers': { $includes: userId } },
-                            { 'lib.viewers': { $includes: '*' } }
-                        ]
-                    }]
+                'lib.starredBy': { $includes: userId }
             }
         ]
     }
