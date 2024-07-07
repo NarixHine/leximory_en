@@ -10,6 +10,6 @@ type Events = {
 }
 
 export const inngest = new Inngest({
-    id: 'leximory',
+    id: 'leximory-en',
     schemas: new EventSchemas().fromRecord<Events>(),
 },)

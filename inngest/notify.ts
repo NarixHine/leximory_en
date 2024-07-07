@@ -6,7 +6,7 @@ import { PrismaClient } from '@prisma/client'
 type Events = GetEvents<typeof inngest>
 
 webpush.setVapidDetails(
-    'https://leximory.com/',
+    'https://en.leximory.com/',
     process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!,
     process.env.VAPID_PRIVATE_KEY!
 )
@@ -26,7 +26,7 @@ export const fanNotification = inngest.createFunction(
                 return {
                     name: 'app/notify',
                     data: {
-                        subscription: user.subscription as string,
+                        subscription: user.subscription!,
                     },
                     user,
                 }
@@ -42,6 +42,7 @@ export const notify = inngest.createFunction(
     { event: 'app/notify' },
     async ({ event, step }) => {
         const { subscription } = event.data
+        console.log(subscription)
         webpush.sendNotification(JSON.parse(subscription), JSON.stringify({
             title: 'Leximory 日报',
             body: '回顾昨日、四日前、七日前记忆的语汇。',
