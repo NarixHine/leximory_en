@@ -30,7 +30,7 @@ export default async function Lookback() {
                 <Commented key={word} md={word} lib={lib!.id} disableSave></Commented>
             </span>
         ) : <span className='inline-block px-2 py-1'>
-            <Commented md={'无新增语汇。'}></Commented>
+            <Commented md={'No saved words yet.'}></Commented>
         </span>}
     </LookbackWrapper>
 }
@@ -40,6 +40,6 @@ export const LookbackWrapper = ({ children }: { children: ReactNode }) => {
         <div className='w-full overflow-x-auto whitespace-nowrap border-b-2'>
             {children}
         </div>
-        <label className='p-2 opacity-70 font-semibold'>近期回顾</label>
+        <label className='p-2 opacity-70 font-semibold'>Recently saved</label>
     </div>
 }

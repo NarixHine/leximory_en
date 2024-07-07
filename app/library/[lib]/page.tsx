@@ -61,17 +61,17 @@ export default async function Page({ params }: LibParams) {
         <Options
             trigger={
                 texts.length > 0
-                    ? <Button className='mx-auto block' color='primary' isDisabled={isReadOnly}>新增文本</Button>
+                    ? <Button className='mx-auto block' color='primary' isDisabled={isReadOnly}>Create new text</Button>
                     : <Card className='sm:w-1/2 mx-auto w-2/3 aspect-square border-dashed border-3' shadow='sm' isPressable isBlurred>
                         <CardBody className='p-3 justify-center items-center flex'>
-                            <a className='text-3xl text-balance opacity-70'>新建文本</a>
+                            <a className='text-3xl text-balance opacity-70'>Create new text</a>
                         </CardBody>
                     </Card>
             }
             action={save.bind(null, crypto.getRandomValues(new Uint32Array(1))[0].toString(16))}
             inputs={[{
                 name: 'title',
-                label: '标题',
+                label: 'Title',
             }]}></Options>
     </Main>
 }

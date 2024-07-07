@@ -5,12 +5,12 @@ import Commented from '@/components/markdown'
 import H from '@/components/title'
 
 export default async function Report({ day }: {
-    day: '一天前' | '四天前' | '七天前'
+    day: '1 day ago' | '4 days ago' | '7 days ago'
 }) {
     const range = {
-        '一天前': [1, 0],
-        '四天前': [4, 3],
-        '七天前': [7, 6],
+        '1 day ago': [1, 0],
+        '4 days ago': [4, 3],
+        '7 days ago': [7, 6],
     }
     const xata = getXataClient()
     const words = await xata.db.lexicon.select(['id', 'word']).filter({

@@ -40,7 +40,7 @@ async function getOrgs() {
 
 export default async function Page() {
     const [{ summaries }, mems] = await Promise.all([getData(), getOrgs()])
-    const { userId, orgId, orgRole } = auth()
+    const { userId, orgId } = auth()
     const save = async (id: string, form: FormData) => {
         'use server'
         const xata = getXataClient()
@@ -117,7 +117,7 @@ export default async function Page() {
 
     return <Main className='flex flex-col gap-10'>
         <Nav></Nav>
-        <H>文库</H>
+        <H>Library</H>
         <DailyCard></DailyCard>
         <div className='grid grid-cols-2 justify-center gap-4 -mt-6'>
             <Suspense fallback={<GradientCard></GradientCard>}>
@@ -153,7 +153,7 @@ export default async function Page() {
         ))
         }
         <Options
-            trigger={<Button className='mx-auto block' color='primary'>创建新文库</Button>}
+            trigger={<Button className='mx-auto block' color='primary'>Create a new library</Button>}
             action={save.bind(null, randomID())}
             inputs={[{
                 name: 'name',
@@ -171,7 +171,7 @@ export default async function Page() {
             }]}
             selects={[{
                 name: 'access',
-                label: '权限',
+                label: 'Access',
                 value: 'private',
                 options: accessOptions
             }, {

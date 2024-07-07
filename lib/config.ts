@@ -2,11 +2,11 @@ export type ArrayElement<A> = A extends readonly (infer T)[] ? T : never
 
 export const supportedLangs = ['zh', 'en', 'ja', 'nl']
 export const langMap: {
-    [key: ArrayElement<typeof supportedLangs>]: '文言文' | '英文' | '日文' | '其他'
+    [key: ArrayElement<typeof supportedLangs>]: '文言文' | 'English' | 'Japanese' | '其他'
 } = {
     'zh': '文言文',
-    'en': '英文',
-    'ja': '日文',
+    'en': 'English',
+    'ja': 'Japanese',
     'nl': '其他'
 }
 
@@ -64,11 +64,11 @@ export const prefixUrl = (url: string) => `${UrlPrefix}${url}`
 
 export const accessOptions = [{
     name: 'private',
-    label: '私有（仅自己及小组成员可见）'
+    label: 'Private'
 }, {
     name: 'public',
-    label: '公开（所有用户都可见）'
+    label: 'Public'
 }, {
     name: 'review',
-    label: '允许申请（除小组成员外需要申请读写权限）'
+    label: 'Applicaple'
 }]

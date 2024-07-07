@@ -48,8 +48,8 @@ export const authRead = async (lib: string) => {
     if (!rec) {
         throw new Error('Read unauthorized')
     }
-    const isReadOnly = (orgId !== '' && rec?.org === orgId ? orgRole !== 'org:admin' : true)
     const isOwner = rec?.owner === auth().userId
+    const isReadOnly = !isOwner && (orgId !== '' && rec?.org === orgId ? orgRole !== 'org:admin' : true)
     return { rec, isReadOnly, isOwner }
 }
 
@@ -67,12 +67,12 @@ export const authAccess = async (lib: string, otherwise?: () => void) => {
     if (!rec) {
         throw new Error('Library not found')
     }
-
-    const isAccessible = rec?.access === libAccessStatusMap.public || (Boolean(orgId) && rec?.org === orgId)
+    const isOwner = rec?.owner === auth().userId
+    const isAccessible = isOwner || rec?.access === libAccessStatusMap.public || (Boolean(orgId) && rec?.org === orgId)
     if (!isAccessible && otherwise) {
         otherwise()
     }
-    const isReadOnly = isAccessible && (orgId !== '' && rec?.org === orgId ? orgRole !== 'org:admin' : true)
+    const isReadOnly = isAccessible && (!isOwner && (orgId !== '' && rec?.org === orgId ? orgRole !== 'org:admin' : true))
     const isPrivate = rec?.access === libAccessStatusMap.private
     const isOrgnizational = orgId !== '' && rec?.org === orgId
     return { rec, isAccessible, isReadOnly, isPrivate, isOrgnizational }

@@ -71,7 +71,7 @@ export default function Digest({ id, lib, content: defaultContent, isReadOnly, l
             <Button onPress={() => {
               toggleReaderMode()
             }} className='mx-auto' variant={'light'} color={isReaderMode ? 'default' : 'danger'} radius='sm' endContent={<FaPrint></FaPrint>} startContent={<FaBookOpenReader></FaBookOpenReader>}>
-              读者模式／印刷模式
+              Print mode
             </Button>
           </Tooltip>
         </div>
@@ -82,10 +82,10 @@ export default function Digest({ id, lib, content: defaultContent, isReadOnly, l
             color='danger'
             onValueChange={(value) => { setCustomLexicon(value as CustomLexicon) }}
           >
-            <Radio value='none'>无</Radio>
-            <Radio value='chuzhong'>初中</Radio>
-            <Radio value='gaozhong'>高中</Radio>
-            <Radio value='cet6'>六级</Radio>
+            <Radio value='none'>None</Radio>
+            <Radio value='chuzhong'>Middle school</Radio>
+            <Radio value='gaozhong'>High school</Radio>
+            <Radio value='cet6'>CET 6</Radio>
           </RadioGroup>
         </div>}
       </div>
@@ -108,7 +108,7 @@ export default function Digest({ id, lib, content: defaultContent, isReadOnly, l
             <Button variant='flat' color='secondary' startContent={<IoIosAddCircleOutline></IoIosAddCircleOutline>} onClick={() => {
               setModifiedTopics([...modifiedTopics, newTopic])
               setNewTopic('')
-            }}>添加</Button>
+            }}>Add</Button>
           </div>
           <Spacer y={2}></Spacer>
           <div className='sm:hidden'>
@@ -135,7 +135,7 @@ export default function Digest({ id, lib, content: defaultContent, isReadOnly, l
           {editing && <Button fullWidth variant='flat' color='secondary' onClick={async () => {
             await save(id, modifiedMd, modifiedTopics, lib)
             setEditing(false)
-          }}>保存更改</Button>}
+          }}>Save</Button>}
         </>
         : <Markdown className={!isReaderMode ? `${typographyStyles} mx-auto block` : 'lg:w-3/5 block'} md={`<article>\n${md}\n</article>`} lib={lib} lexicon={customLexicon} disableSave={isReadOnly}></Markdown>
     }

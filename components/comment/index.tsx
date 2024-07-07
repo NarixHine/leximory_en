@@ -41,7 +41,7 @@ function Comment({ params, lib, disableSave, deleteId, trigger, asCard }: {
         if (isOnDemand && !isLoaded) {
             const defs = await load(words[0][0])
             if (defs.length === 0) {
-                setWords(words => [[words[0][0], words[0][0], '未找到释义。']])
+                setWords(words => [[words[0][0], words[0][0], '未找到Definition。']])
             }
             else {
                 setWords(words => defs.map((word) => [
@@ -75,23 +75,23 @@ function Comment({ params, lib, disableSave, deleteId, trigger, asCard }: {
                             transform: 'translate(-50%, -50%)',
                         }}
                         onClick={() => setIsVisible(!isVisible)}
-                    >显示词义</Button>}
+                    >Reveal</Button>}
                     <div className={isVisible ? undefined : 'invisible'}>
                         {
                             words[0][2] && <div>
-                                {<div className='font-bold mb-1 mt-2'>释义</div>}
+                                {<div className='font-bold mb-1 mt-2'>Definition</div>}
                                 <Markdown>{words[0][2]}</Markdown>
                             </div>
                         }
                         {
                             words[0][3] && <div>
-                                {<div className='font-bold mb-1 mt-2'>语源</div>}
+                                {<div className='font-bold mb-1 mt-2'>Etymology</div>}
                                 <Markdown>{words[0][3]}</Markdown>
                             </div>
                         }
                         {
                             words[0][4] && <div>
-                                <div className='font-bold mb-1 mt-2'>同源词</div>
+                                <div className='font-bold mb-1 mt-2'>Cognates</div>
                                 <Markdown>{words[0][4]}</Markdown>
                             </div>
                         }
@@ -135,7 +135,7 @@ function Comment({ params, lib, disableSave, deleteId, trigger, asCard }: {
                                                     setStatus('')
                                                 })
                                         }}
-                                    >保存至语料本</Button>
+                                    >Save to Notebook</Button>
                                 </>}
                                 {deleteId && deleteId !== 'undefined' && <>
                                     <Divider className='my-2'></Divider>
@@ -187,19 +187,19 @@ function Note({ portions, isCompact }: {
         <div className={isCompact ? 'font-bold text-[1rem]' : 'font-extrabold text-large'}>{portions[1]}</div>
         {
             portions[2] && <div className={margin}>
-                {!isCompact && <div className='font-bold'>释义</div>}
+                {!isCompact && <div className='font-bold'>Definition</div>}
                 <Markdown>{isCompact ? portions[2].replaceAll('\n\n', '; ') : portions[2]}</Markdown>
             </div>
         }
         {
             portions[3] && <div className={margin}>
-                {!isCompact && <div className='font-bold'>语源</div>}
+                {!isCompact && <div className='font-bold'>Etymology</div>}
                 <Markdown>{portions[3]}</Markdown>
             </div>
         }
         {
             portions[4] && <div className={margin}>
-                {!isCompact && <div className='font-bold'>同源词</div>}
+                {!isCompact && <div className='font-bold'>Cognates</div>}
                 <Markdown>{portions[4]}</Markdown>
             </div>
         }

@@ -49,40 +49,39 @@ export default function ImportModal({ isReadOnly, lang, input, setContent, handl
     const exceeded = input.length > maxArticleLength(lang)
     return (<>
         <div className='px-3 flex gap-3'>
-            <Button isDisabled={isReadOnly} onPress={onOpen} className='flex-1' variant='flat' color='primary' isLoading={isLoading}>导入文本</Button>
+            <Button isDisabled={isReadOnly} onPress={onOpen} className='flex-1' variant='flat' color='primary' isLoading={isLoading}>Import</Button>
             <Switch isDisabled={isReadOnly || isLoading} isSelected={editing} onValueChange={setEditing} color='secondary'>
-                修正模式
+                Edit
             </Switch>
         </div>
         <Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} isKeyboardDismissDisabled={true}>
             <ModalContent>
                 {(onClose) => (
                     <form className='w-full'>
-                        <ModalHeader className="flex flex-col gap-1">导入文本</ModalHeader>
+                        <ModalHeader className="flex flex-col gap-1">Import</ModalHeader>
                         <ModalBody>
                             <div className='flex'>
                                 <Input
                                     className='flex-1'
-                                    label='网址'
+                                    label='Link'
                                     value={url}
                                     onChange={(e) => setUrl(e.target.value)}
                                     variant='underlined' />
                                 <div className='flex flex-col-reverse'>
-                                    <Button onPress={populate} variant='light' isDisabled={!isUrl(url)}>一键读取</Button>
+                                    <Button onPress={populate} variant='light' isDisabled={!isUrl(url)}>Read</Button>
                                 </div>
                             </div>
                             <Divider className='my-2'></Divider>
                             {/* @ts-ignore */}
-                            <Select label='生成模式' description='如果极速模式不尽人意，试试标准模式' selectedKeys={mode} onSelectionChange={setMode} startContent={mode.has('flash') ? <IoFlashOutline></IoFlashOutline> : <MdAutoFixNormal></MdAutoFixNormal>}>
-                                <SelectItem key={'flash'} value='flash' startContent={<IoFlashOutline></IoFlashOutline>}>极速模式</SelectItem>
-                                <SelectItem key={'standard'} value='standard' startContent={<MdAutoFixNormal></MdAutoFixNormal>}>标准模式</SelectItem>
+                            <Select label='Mode' selectedKeys={mode} onSelectionChange={setMode} startContent={mode.has('flash') ? <IoFlashOutline></IoFlashOutline> : <MdAutoFixNormal></MdAutoFixNormal>}>
+                                <SelectItem key={'flash'} value='flash' startContent={<IoFlashOutline></IoFlashOutline>}>Flash mode</SelectItem>
+                                <SelectItem key={'standard'} value='standard' startContent={<MdAutoFixNormal></MdAutoFixNormal>}>Standard mode</SelectItem>
                             </Select>
                             <Textarea
                                 errorMessage={exceeded ? `文本长度超过 ${maxArticleLength(lang)} 字符` : undefined}
                                 isInvalid={exceeded}
                                 value={input}
-                                label='文本'
-                                description='AI 注解可能含有错误，超过上限或触发特定阈值会自动停止'
+                                label='Text'
                                 rows={8}
                                 onChange={handleInputChange}
                                 disableAutosize />
@@ -117,7 +116,7 @@ export default function ImportModal({ isReadOnly, lang, input, setContent, handl
                                     }
                                 }
                             }}>
-                                生成
+                                Generate
                             </Button>
                         </ModalFooter>
                     </form>

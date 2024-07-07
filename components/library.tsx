@@ -43,9 +43,9 @@ function Library({ id, name, topics, lexicon, lang, save, del, isOwner, access, 
             </CardBody>
             <Divider></Divider>
             <CardFooter className='p-4 flex gap-4'>
-                <Button onClick={(e) => { e.stopPropagation() }} as={Link} href={`/library/${id}/corpus`} startContent={<FaBookBookmark></FaBookBookmark>} color='primary' variant='flat'>语料本</Button>
+                <Button onClick={(e) => { e.stopPropagation() }} as={Link} href={`/library/${id}/corpus`} startContent={<FaBookBookmark></FaBookBookmark>} color='primary' variant='flat'>Notebook</Button>
                 <div className='flex flex-col'>
-                    <p className='text-xs opacity-80'>积累的词汇</p>
+                    <p className='text-xs opacity-80'>accumulated words</p>
                     <p className='text-lg'>{lexicon.count}</p>
                 </div>
             </CardFooter>
@@ -56,17 +56,17 @@ function Library({ id, name, topics, lexicon, lang, save, del, isOwner, access, 
             shareUrl={access !== libAccessStatusMap.private ? `/library/${id}` : undefined}
             inputs={[{
                 name: 'name',
-                label: '文库名',
+                label: 'Name',
                 value: name
             }]}
             selects={[{
                 name: 'access',
-                label: '权限',
+                label: 'Access',
                 value: Object.keys(libAccessStatusMap).find(key => libAccessStatusMap[key] === access),
                 options: accessOptions
             }, {
                 name: 'lang',
-                label: '语言',
+                label: 'Language',
                 value: lang,
                 options: supportedLangs.map(lang => ({
                     name: lang,
@@ -75,7 +75,7 @@ function Library({ id, name, topics, lexicon, lang, save, del, isOwner, access, 
                 disabled: true
             }, {
                 name: 'org',
-                label: '文库所属小组',
+                label: 'Orgnization',
                 value: typeof orgId !== 'string' ? 'none' : orgId,
                 options: orgs.concat({
                     label: '无',

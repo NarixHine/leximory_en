@@ -19,9 +19,9 @@ export default function Bell({ hasSubscribed }: {
     }
     return (
         <div className='flex flex-col justify-center items-center space-y-1'>
-            <Button variant={hasSubscribed ? 'solid' : 'ghost'} onPress={hasSubscribed ? () => delSubs() : () => subscribe()} size='lg' radius='full' color='primary' startContent={<FcAlarmClock />}>{`${hasSubscribed ? '关闭' : '开启'} 22:00 日报提醒`}</Button>
+            <Button variant={hasSubscribed ? 'solid' : 'ghost'} onPress={hasSubscribed ? () => delSubs() : () => subscribe()} size='lg' radius='full' color='primary' startContent={<FcAlarmClock />}>{`${hasSubscribed ? 'Turn off' : 'Turn on'} review notification (22:00)`}</Button>
             <div className='opacity-50 text-sm text-balance text-center'>
-                iOS 用户请将 Leximory 添加至主界面<br></br>更换设备后需要重新开启消息
+                iOS users need to add Leximory to the home screen
             </div>
         </div>
     )

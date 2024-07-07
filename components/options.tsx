@@ -55,12 +55,12 @@ export default function Options({ inputs, selects, action, del, trigger, shareUr
             <ModalContent>
                 {(onClose) => (
                     <form className='w-full' action={action}>
-                        <ModalHeader className='flex flex-col gap-1'>设置</ModalHeader>
+                        <ModalHeader className='flex flex-col gap-1'>Settings</ModalHeader>
                         <ModalBody>
                             <Fields inputs={inputs?.filter(({ isAdvanced }) => !isAdvanced)} selects={selects?.filter(({ isAdvanced }) => !isAdvanced)}></Fields>
                             <div className='flex justify-end'>
                                 <Button color='primary' variant='flat' type='submit' className='my-2' onPress={onClose}>
-                                    保存
+                                    Save
                                 </Button>
                             </div>
                         </ModalBody>
@@ -71,21 +71,21 @@ export default function Options({ inputs, selects, action, del, trigger, shareUr
                                 <Divider></Divider>
                                 {/* @ts-ignore */}
                                 <Accordion isCompact fullWidth>
-                                    {(advancedInputs.length > 0 || advancedSelects.length > 0) && <AccordionItem title='进阶设置' key={1}>
+                                    {(advancedInputs.length > 0 || advancedSelects.length > 0) && <AccordionItem title='Advanced settings' key={1}>
                                         <Fields inputs={advancedInputs} selects={advancedSelects}></Fields>
                                         <div className='flex justify-end'>
                                             <Button color='secondary' variant='flat' type='submit' className='my-2' onPress={onClose}>
-                                                保存
+                                                Save
                                             </Button>
                                         </div>
                                         <Spacer />
                                     </AccordionItem>}
-                                    <AccordionItem title='危险操作' key={2}>
+                                    <AccordionItem title='Dangerous zone' key={2}>
                                         <Button color='danger' fullWidth variant='ghost' onPress={async () => {
                                             await del()
                                             onClose()
                                         }}>
-                                            删除
+                                            Delete
                                         </Button>
                                         <Spacer />
                                     </AccordionItem>

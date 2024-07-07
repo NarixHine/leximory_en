@@ -6,7 +6,6 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes'
 import { ThemeProviderProps } from 'next-themes/dist/types'
 import { ReactNode } from 'react'
 import { ClerkProvider } from '@clerk/nextjs'
-import { zhCN } from '@clerk/localizations'
 import { useSystemColorMode } from 'react-use-system-color-mode'
 import { dark } from '@clerk/themes'
 import ReaderModeProvider from '@/components/reader'
@@ -21,7 +20,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
 	const router = useRouter()
 	const mode = useSystemColorMode()
 	return (
-		<ClerkProvider localization={zhCN} appearance={{ baseTheme: mode === 'dark' ? dark : undefined }}>
+		<ClerkProvider appearance={{ baseTheme: mode === 'dark' ? dark : undefined }}>
 			<NextUIProvider navigate={router.push}>
 				<NextThemesProvider {...themeProps}>
 					<Toaster toastOptions={{

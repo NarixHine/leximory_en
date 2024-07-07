@@ -42,7 +42,7 @@ function Text({ id, title, lang, save, del, libId, isReadOnly, topics }: {
             action={save}
             inputs={[{
                 name: 'title',
-                label: '标题',
+                label: 'Title',
                 value: title
             }]}></Options>}
     </div>)

@@ -4,7 +4,7 @@ import { CircularProgress } from '@nextui-org/progress'
 
 export const CommentaryQuotaCard = async () => {
     const { quota, max, percentage } = await getCommentaryQuota()
-    return <GradientCard title={'本月 AI 注解额度'} text={`${quota} / ${max}`}>
+    return <GradientCard title={'AI Annotation quota'} text={`${quota} / ${max}`}>
         <CircularProgress
             size='lg'
             value={percentage}
@@ -19,7 +19,7 @@ export const CommentaryQuotaCard = async () => {
 
 export const AudioQuotaCard = async () => {
     const { quota, max, percentage } = await getAudioQuota()
-    return <GradientCard title={'本月 AI 音频额度'} text={`${quota} / ${max}`} gradient={'bg-gradient-to-br from-primary-400 to-danger-300'}>
+    return <GradientCard title={'AI Reading quota'} text={`${quota} / ${max}`} gradient={'bg-gradient-to-br from-primary-400 to-danger-300'}>
         <CircularProgress
             size='lg'
             value={percentage}

@@ -11,9 +11,9 @@ export default function Save({ lib, isReadOnly, compact, isEnglish }: { lib: str
     const [input, setInput] = useState('')
     const [pending, setPending] = useState(false)
     return <div className='my-2'>
-        {!compact && <h2 className='text-xl'>保存外部生词</h2>}
+        {!compact && <h2 className='text-xl'>Save external words</h2>}
         <div className='flex space-x-2'>
-            <Input name={'word'} value={input} onChange={(e) => setInput(e.target.value)} variant='underlined' size='sm' label={compact ? '手动输入词汇' : '输入词汇'} className='flex-1'></Input>
+            <Input name={'word'} value={input} onChange={(e) => setInput(e.target.value)} variant='underlined' size='sm' className='flex-1'></Input>
             <div className='flex flex-col-reverse'>
                 <div className='flex space-x-2'>
                     {isEnglish && <Comment
@@ -33,7 +33,7 @@ export default function Save({ lib, isReadOnly, compact, isEnglish }: { lib: str
                         await save(lib, input)
                         setInput('')
                         setPending(false)
-                    }} isLoading={pending} size='sm' type='submit' variant='flat' color='primary'>保存</Button>}
+                    }} isLoading={pending} size='sm' type='submit' variant='flat' color='primary'>Save</Button>}
                 </div>
             </div>
         </div>
