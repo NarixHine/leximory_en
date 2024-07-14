@@ -1,0 +1,16 @@
+{
+  "id": "mig_coci7ks6btciiaoq6kcg",
+  "parentID": "mig_coci79pi8ag8nohmeb6g",
+  "checksum": "1:5746e66e72bcaf65e6e2af620cad3b884b7cbc0ab6fc024a5dff8db0312c1733",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "viewers",
+          "type": "multiple"
+        },
+        "table": "libraries"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp8lrdjrgin2nopfial0",
+  "parentID": "mig_cp8k7ngl703neuhj6fjg",
+  "checksum": "1:dc0571c3bcae4c434ead80a6655072e4ecbccb74186c9d6988d4a302bd0f5a66",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "access",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "read"
+        },
+        "table": "applications"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# Leximory
+
+![](./public/blog.png)

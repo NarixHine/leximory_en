@@ -1,0 +1,129 @@
+{
+  "id": "mig_coupvv2fa7kvs2iv57jg",
+  "parentID": "mig_coudpiafa7kvs2iv4v7g",
+  "checksum": "1:3a550d35d572c39dc47059bbc0a05f36d955fbc031ad27903a66402962d54f72",
+  "operations": [
+    {
+      "addTable": {
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "word",
+          "type": "string"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "phonetic",
+          "type": "string"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "definition",
+          "type": "text"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "translation",
+          "type": "text"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "pos",
+          "type": "string"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "collins",
+          "type": "int"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "oxford",
+          "type": "int"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "tag",
+          "type": "string"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "bnc",
+          "type": "int"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "frq",
+          "type": "int"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "exchange",
+          "type": "string"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "detail",
+          "type": "string"
+        },
+        "table": "ecdict"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "audio",
+          "type": "string"
+        },
+        "table": "ecdict"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cphg8aepghb6sa25gsug",
+  "parentID": "mig_cp8m710l703neuhj6gbg",
+  "checksum": "1:f1816661d95ff4410308b4c72ae1d67c5f40c063e559082e38254994df7da8af",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "org",
+          "type": "string"
+        },
+        "table": "libraries"
+      }
+    }
+  ]
+}

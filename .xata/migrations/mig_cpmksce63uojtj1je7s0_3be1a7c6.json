@@ -1,0 +1,12 @@
+{
+  "id": "mig_cpmksce63uojtj1je7s0",
+  "parentID": "mig_cphg8aepghb6sa25gsug",
+  "checksum": "1:3be1a7c6f1cbba97906519bfb9eb769ab3b9c82e7dd11b0999ff7f5e853d3cba",
+  "operations": [
+    {
+      "addTable": {
+        "table": "audio"
+      }
+    }
+  ]
+}

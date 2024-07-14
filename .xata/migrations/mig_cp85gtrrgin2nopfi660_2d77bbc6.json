@@ -1,0 +1,12 @@
+{
+  "id": "mig_cp85gtrrgin2nopfi660",
+  "parentID": "mig_couukahqvan5oeam20t0",
+  "checksum": "1:2d77bbc6b4232c5147d25b9c8d78d4b384a486ea3a3ede0957c38466d10bf036",
+  "operations": [
+    {
+      "addTable": {
+        "table": "applications"
+      }
+    }
+  ]
+}

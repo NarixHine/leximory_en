@@ -1,0 +1,14 @@
+{
+  "id": "mig_cocia86p7f5ih5v51p7g",
+  "parentID": "mig_cocia4s6btciiaoq6keg",
+  "checksum": "1:b0ff44c0b4393aa7778433bc61df27d45fe5119aa55d9318098732d67697830b",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "lib",
+        "oldName": "library",
+        "table": "texts"
+      }
+    }
+  ]
+}

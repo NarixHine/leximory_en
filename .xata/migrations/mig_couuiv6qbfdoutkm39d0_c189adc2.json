@@ -1,0 +1,13 @@
+{
+  "id": "mig_couuiv6qbfdoutkm39d0",
+  "parentID": "mig_couuit1qvan5oeam20s0",
+  "checksum": "1:c189adc20db6c25c582767bb2fbd1523037e5a5edc4871e4e8aa44aa0701f75a",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "collins",
+        "table": "ecdict"
+      }
+    }
+  ]
+}

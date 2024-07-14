@@ -1,0 +1,18 @@
+{
+  "id": "mig_cooef5776ivhs9c6s0rg",
+  "parentID": "mig_comc5djcq0nij8lu3c4g",
+  "checksum": "1:6c1a51e2cb27b9fb93fadd9bb55100d99d19e44e7d27726f8cfac98a0a38d779",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": "新文库"
+        },
+        "table": "libraries"
+      }
+    }
+  ]
+}

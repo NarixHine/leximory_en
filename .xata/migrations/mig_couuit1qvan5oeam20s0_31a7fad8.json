@@ -1,0 +1,13 @@
+{
+  "id": "mig_couuit1qvan5oeam20s0",
+  "parentID": "mig_coupvv2fa7kvs2iv57jg",
+  "checksum": "1:31a7fad8578703ba4f27aca956702e9fa0456dc89a9209e3fbf8508e22c1192c",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "oxford",
+        "table": "ecdict"
+      }
+    }
+  ]
+}

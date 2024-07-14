@@ -1,0 +1,13 @@
+{
+  "id": "mig_couukahqvan5oeam20t0",
+  "parentID": "mig_couujjmqbfdoutkm39g0",
+  "checksum": "1:cf388fa93b4ea3a92976101858bba152fd9b55791a51a6c083c7831d6a929c08",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "exchange",
+        "table": "ecdict"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cpn4vhl3l6trsu4qfsj0",
+  "parentID": "mig_cpmksk663uojtj1je7t0",
+  "checksum": "1:620fb66de3c2060c0e86401988ce487fa32015975b0c36da8a65cd243906494a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "gen",
+          "type": "file"
+        },
+        "table": "audio"
+      }
+    }
+  ]
+}

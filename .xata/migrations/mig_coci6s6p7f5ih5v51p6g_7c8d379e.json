@@ -1,0 +1,16 @@
+{
+  "id": "mig_coci6s6p7f5ih5v51p6g",
+  "parentID": "mig_coci6nk6btciiaoq6kbg",
+  "checksum": "1:7c8d379e1f0502249b1ffb68c1ebe5471caab7e9ef238a4a3db5d6d4e514458a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "collaborators",
+          "type": "multiple"
+        },
+        "table": "libraries"
+      }
+    }
+  ]
+}

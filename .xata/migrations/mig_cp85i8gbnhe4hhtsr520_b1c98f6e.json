@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp85i8gbnhe4hhtsr520",
+  "parentID": "mig_cp85i60bnhe4hhtsr510",
+  "checksum": "1:b1c98f6e8aec80388f6678f654044c115dfd80d0a20496aa87b1bc7dfdfca5c9",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "status",
+          "type": "int",
+          "notNull": true,
+          "defaultValue": "0"
+        },
+        "table": "applications"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "mig_coci6nk6btciiaoq6kbg",
+  "parentID": "mig_coci6ihi8ag8nohmeb5g",
+  "checksum": "1:c15260363ee8a4e36373dceffa6fd1c165926a08bc3546113421f602138c2d02",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "collaborators",
+        "table": "libraries"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "mig_coci79pi8ag8nohmeb6g",
+  "parentID": "mig_coci6s6p7f5ih5v51p6g",
+  "checksum": "1:4e890b99a5ea59fe54de9ceb2abb9ee98f00d1bf4f14f1c743a8efea1ccc2644",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "owner",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": ""
+        },
+        "table": "libraries"
+      }
+    }
+  ]
+}

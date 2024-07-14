@@ -1,0 +1,18 @@
+{
+  "id": "mig_cp85h5gbnhe4hhtsr4u0",
+  "parentID": "mig_cp85gtrrgin2nopfi660",
+  "checksum": "1:55f8381a8cb1cd045d5990fb3021848a7b215e0f60f1d12d5a7bdc58922e79cc",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "user",
+          "type": "string",
+          "notNull": true,
+          "defaultValue": ""
+        },
+        "table": "applications"
+      }
+    }
+  ]
+}
