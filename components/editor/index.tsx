@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic'
 import './editor.css'
 import DefaultEditor, { Plugins } from 'react-markdown-editor-lite'
-import Reader from './audio'
 
 const MdEditor = dynamic(
     // @ts-ignore
@@ -11,7 +10,6 @@ const MdEditor = dynamic(
                 import('react-markdown-editor-lite'),
             ]).then((res) => {
                 const Editor: typeof DefaultEditor = res[0].default
-                Editor.use(Reader)
                 Editor.unuse(Plugins.Table)
                 Editor.unuse(Plugins.BlockCodeBlock)
                 Editor.unuse(Plugins.Clear)

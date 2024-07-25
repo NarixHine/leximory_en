@@ -15,7 +15,7 @@ const prisma = new PrismaClient()
 
 export const fanNotification = inngest.createFunction(
     { id: 'load-subscribed-users' },
-    { cron: 'TZ=Asia/Shanghai 0 22 * * *' },
+    { cron: '0 22 * * *' },
     async ({ step }) => {
         const users = await step.run('fetch-users', async () => {
             return prisma.subs.findMany()

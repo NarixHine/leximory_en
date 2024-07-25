@@ -30,14 +30,6 @@ async function getData() {
             count: { count: '*' },
         },
     })
-    if (data.summaries.length === 0) {
-        return await xata.db.lexicon.filter({ 'lib.id': '3e4f1126' }).summarize({
-            columns: ['lib'],
-            summaries: {
-                count: { count: '*' },
-            },
-        })
-    }
     return data
 }
 
