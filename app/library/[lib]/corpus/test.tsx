@@ -45,7 +45,7 @@ export default function Test({ lib, latestTime, compact, disableDel }: {
                     ))
                 }
             </div>
-            <Button size='sm' variant='flat' color='primary' onClick={async () => {
+            <Button size='sm' variant='flat' color='primary' isDisabled={compact} onClick={async () => {
                 const words = await draw(lib, moment(start.toDate(getLocalTimeZone())).startOf('day').toDate(), moment(end.toDate(getLocalTimeZone())).add(1, 'day').startOf('day').toDate())
                 setWords(words)
             }}>Draw</Button>
